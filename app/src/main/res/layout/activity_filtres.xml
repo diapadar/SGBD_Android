@@ -55,7 +55,7 @@
             android:textStyle="bold"
             android:textSize="16sp"
             android:textAlignment="center"
-            android:text="Selecciona les alèrgies o menjar que no vols prendre"/>
+            android:text="Selecciona les al·lèrgies o menjar que no vols prendre"/>
 
 
         <com.google.android.material.chip.ChipGroup
