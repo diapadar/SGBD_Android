@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -26,10 +27,11 @@ public class ActivityRecomanacio extends AppCompatActivity implements Adapter1.I
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recomanacio);
 
-        Button boto;
+        Button boto, enrere;
         TextView buit1, buit2, buit3;
 
         boto = findViewById(R.id.main_boto);
+        enrere = findViewById(R.id.main_boto_enrere);
         RecyclerView recyclerView1 = findViewById(R.id.main_llista1);
         RecyclerView recyclerView2 = findViewById(R.id.main_llista2);
         RecyclerView recyclerView3 = findViewById(R.id.main_llista3);
@@ -60,13 +62,21 @@ public class ActivityRecomanacio extends AppCompatActivity implements Adapter1.I
         boto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(GLOBALS.response.isEmpty()) Toast.makeText(getApplicationContext(),"No se rick", Toast.LENGTH_SHORT).show(); //easter egg 1
+                if(!adapter1.isSelected() && !adapter2.isSelected() && !adapter3.isSelected())
+                    Toast.makeText(getApplicationContext(),"No se rick", Toast.LENGTH_SHORT).show(); //easter egg 1
                 else {
                     Intent i = new Intent(getApplicationContext(),ActivityFinal.class);
                     i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(i);
                     finish();
                 }
+            }
+        });
+
+        enrere.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }
@@ -87,7 +97,7 @@ public class ActivityRecomanacio extends AppCompatActivity implements Adapter1.I
     }
 
     private void mostrarDescPlat(int position, ArrayList<Plat> array){
-        if (array.size()< position){
+        if (array.size()> position){
             String msg = "";
             String ret = System.getProperty("line.separator");
             msg = msg.concat(array.get(position).desc + ret);

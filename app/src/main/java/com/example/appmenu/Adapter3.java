@@ -42,7 +42,7 @@ public class Adapter3 extends RecyclerView.Adapter<Adapter3.ViewHolder> {
         else holder.tick.setBackground(context.getResources().getDrawable(R.drawable.no_tick));
         Log.i("FOTO", (items.get(position).url));
         Glide.with(context).load(items.get(position).url)
-                //.placeholder()
+                .placeholder(R.drawable.buit)
                 .error(R.drawable.buit)
                 .into(holder.foto);
 
@@ -54,6 +54,10 @@ public class Adapter3 extends RecyclerView.Adapter<Adapter3.ViewHolder> {
                 notifyDataSetChanged();
             }
         });
+    }
+
+    public boolean isSelected(){
+        return seleccionat != -1;
     }
 
     // total number of rows

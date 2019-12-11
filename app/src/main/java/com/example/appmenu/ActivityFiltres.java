@@ -32,8 +32,8 @@ public class ActivityFiltres extends AppCompatActivity {
 
     API api;
 
-    String[] array_tipus = {"Italiana", "Japonesa", "Francesa", "Espanyola", "Mexicana", "Xinesa", "Tailandesa"};
-    String[] array_filtres = {"Gluten", "Carn", "Peix", "Ous", "Vegetal", "Fruits secs", "Làctics"};
+    String[] array_tipus = {"Italiana", "Japonesa", "Espanyola", "Mexicana", "Xinesa"};
+    String[] array_filtres = {"Gluten", "Carn", "Peix", "Ous", "Verdura", "Fruits secs", "Làctics"};
     ArrayList<String> filtres = new ArrayList<>();
     ArrayList<String> tipus = new ArrayList<>();
 
